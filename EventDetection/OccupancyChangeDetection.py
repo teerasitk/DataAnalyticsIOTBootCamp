@@ -30,7 +30,7 @@ for k in range(num_dat):
     output.append(regr.coef_)
 slope = pd.Series(output, index=humidity.index)
 detected_results = (slope > 0) # our result
-actual_occupancy = (node1.Occ > 0) # ground data
+actual_occupancy = (node1.Occ > 0.5) # ground data
 
 plt.subplot(2,1,1)
 plt.plot(detected_results, 
